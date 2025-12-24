@@ -23,3 +23,13 @@ This library allows your ESP32 to manage multiple WiFi credentials and automatic
    - **macOS:** `~/Documents/Arduino/libraries/`
 5. Restart your Arduino IDE so it can index the new library
 
+## Configuration
+
+Before compiling, you need to set up your network credentials. This library uses a separate header file to keep your private information safe.
+
+1. Locate the file named `config.template.h` in the library or project folder.
+2. Create a copy of this file into yout project and rename it to `config.h`.
+3. Open `config.h` and fill in your WiFi SSIDs, passwords, and the desired connection timeout
+
+> [!NOTE]
+> If you are using Git, make sure `config.h` is added to your `.gitignore` to prevent your credentials from being uploaded to GitHub
