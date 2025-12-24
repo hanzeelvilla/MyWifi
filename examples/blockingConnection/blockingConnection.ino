@@ -1,6 +1,6 @@
 /* BLOCKING */
 
-#include "MyWifi.h"
+#include <MyWifi.h>
 #include "config.h"
 
 MyWifi wifi;
