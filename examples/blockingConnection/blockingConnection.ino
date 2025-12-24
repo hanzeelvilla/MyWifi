@@ -27,14 +27,14 @@ void setup() {
 
 void loop() {
   if (!wifi.isConnected()) {
-    Serial.print("[ERROR] Connection lost! Reconnecting...");
+    Serial.print("[ERROR] Wifi connection lost! Reconnecting...");
     
     while (!wifi.isConnected()) {
       delay(500);
       Serial.print(".");
     }
     
-    Serial.println("\n[SUCCESS] Reconnected to: " + wifi.getSSID());
+    Serial.println("[SUCCESS] Wifi reconnected to: " + wifi.getSSID());
   }
 
   // MAIN TASKS
