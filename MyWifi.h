@@ -14,7 +14,8 @@ struct WifiCredential {
 class MyWifi {  
   public:
     void begin(std::vector<WifiCredential> wifiList);
-    String ssid();
+    bool isConnected();
+    String getSSID();
 
   private:
     WiFiMulti wifiMulti;

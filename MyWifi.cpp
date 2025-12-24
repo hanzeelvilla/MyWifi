@@ -5,3 +5,11 @@ void MyWifi::begin(std::vector<WifiCredential> wifiList) {
     wifiMulti.addAP(wifi.ssid.c_str(), wifi.pswd.c_str());
   }
 }
+
+bool MyWifi::isConnected() {
+  return wifiMulti.run() == WL_CONNECTED;
+}
+
+String MyWifi::getSSID() {
+  return isConnected() ? WiFi.SSID() : "Disconnected";
+}
