@@ -5,6 +5,8 @@
 #define CONFIG_H
 
 /* ------------------------------ WIFI CONFIG ------------------------------- */
+#define RECONNECT_TIMEOUT_MS 5000  // Time between connection attempts
+
 #define SSID1 "SSID1"
 #define PSWD1 "PSWD1"
 

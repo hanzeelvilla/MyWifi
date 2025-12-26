@@ -5,6 +5,7 @@
 
 MyWifi wifi;
 bool lastWifiStatus = false;
+unsigned long lastMaintainTime = 0;
 
 std::vector<WifiCredential> networks = {
   {SSID1, PSWD1},
@@ -20,6 +21,11 @@ void setup() {
 } 
 
 void loop() {
+  if(millis() - lastMaintainTime >= RECONNECT_TIMEOUT_MS) {
+    wifi.maintain();
+    lastMaintainTime = millis();
+  }
+
   bool currentWifiStatus = wifi.isConnected();
 
   if(currentWifiStatus != lastWifiStatus) {

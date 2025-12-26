@@ -10,6 +10,10 @@ bool MyWifi::isConnected() {
   return wifiMulti.run() == WL_CONNECTED;
 }
 
+void MyWifi::reconnect() {
+  wifiMulti.run();
+}
+
 String MyWifi::getSSID() {
   return isConnected() ? WiFi.SSID() : "Disconnected";
 }

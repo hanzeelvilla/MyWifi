@@ -15,6 +15,7 @@ class MyWifi {
   public:
     void begin(std::vector<WifiCredential> wifiList);
     bool isConnected();
+    void reconnect();
     String getSSID();
 
   private:
